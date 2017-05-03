@@ -1,14 +1,14 @@
-var restful = require('node-restful');
 
+var restful = require('node-restful');
 module.exports = function(app, route) {
 
   // Setup the controller for REST.
   var rest = restful.model(
-    'move',
+    'movie',
     app.models.movie
-    ).methods(['get', 'put', 'post', 'delete']);
+  ).methods(['get', 'put', 'post', 'delete']);
 
-  // Register this endpoint with the application
+  // Register this endpoint with the application.
   rest.register(app, route);
 
   // Return middleware.
